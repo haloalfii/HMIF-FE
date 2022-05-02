@@ -2,7 +2,7 @@
   <div class="row">
     <div
       class="col-lg-6 d-flex align-items-center justify-content-center"
-      style="border-right: 1px solid #4e73df"
+      style="border-right: 1px solid #da2921"
     >
       <img
         src="~/assets/img/logo.png"
@@ -21,7 +21,9 @@
             height="24px"
             class="mx-2"
           />
-          <h1 class="h4 text-gray-900 mb-4">HMIF Amikom</h1>
+          <nuxt-link to="/"
+            ><h1 class="h4 text-gray-900 mb-4">HMIF Amikom</h1></nuxt-link
+          >
         </div>
         <div class="">
           <h1 class="h4 text-gray-900">Welcome Back!</h1>
@@ -73,7 +75,7 @@
               >
             </div>
           </div>
-          <button type="submit" class="btn btn-primary btn-user btn-block">
+          <button type="submit" class="btn btn-hmif btn-user btn-block">
             Login
           </button>
         </form>

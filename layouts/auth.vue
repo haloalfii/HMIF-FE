@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gradient-primary h-100vh">
+  <div class="bg-gradient-hmif h-100vh">
     <div class="container center-card">
       <!-- Outer Row -->
       <div class="row justify-content-center">

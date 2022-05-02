@@ -21,7 +21,9 @@
             height="24px"
             class="mx-2"
           />
-          <h1 class="h4 text-gray-900 mb-4">HMIF Amikom</h1>
+          <nuxt-link to="/"
+            ><h1 class="h4 text-gray-900 mb-4">HMIF Amikom</h1></nuxt-link
+          >
         </div>
         <div class="">
           <h1 class="h4 text-gray-900">Register!</h1>
@@ -159,7 +161,7 @@
               class="form-control form-control-user"
             />
           </div>
-          <button type="submit" class="btn btn-primary btn-user btn-block">
+          <button type="submit" class="btn btn-hmif btn-user btn-block">
             Register
           </button>
         </form>

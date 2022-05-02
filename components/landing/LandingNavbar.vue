@@ -20,7 +20,7 @@
           }}</nuxt-link>
         </li>
         <li v-else>
-          <nuxt-link to="/admin/login" class="nav-links">Login Sini</nuxt-link>
+          <nuxt-link to="/admin/login" class="nav-links">Login</nuxt-link>
         </li>
       </ul>
       <!-- hamburger-menu-icon -->
