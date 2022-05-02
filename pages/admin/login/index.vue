@@ -127,7 +127,7 @@ export default {
       if (res.status === 200) {
         localStorage.setItem("token", res.access_token);
         console.log(this.$auth.user);
-        this.$router.push("/admin");
+        this.$router.push("/");
       }
     },
     seePassword() {

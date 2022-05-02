@@ -17,6 +17,8 @@ export default {
       { src: "/vendor/bootstrap/js/bootstrap.bundle.min.js" },
       { src: "/vendor/jquery-easing/jquery.easing.min.js" },
       { src: "/js/sb-admin-2.min.js" },
+      { src: "/js/app.js" },
+      { src: "/js/type-animation.js" },
     ],
   },
 
@@ -76,7 +78,7 @@ export default {
     redirect: {
       login: "/admin/login",
       logout: "/admin/login",
-      home: "/admin",
+      home: "/",
     },
   },
 

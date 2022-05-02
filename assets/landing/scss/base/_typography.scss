@@ -1,0 +1,85 @@
+
+// main - heading
+.heading-primary{
+    font-family: $ff-inter;
+    color: #102A43;
+    font-size: 6.4rem;
+    @include respond(tab-land){
+        font-size: 6.0rem;
+    }
+    @include respond(tab-port){
+        font-size: 4.5rem;
+    }
+    @include respond(phone){
+        font-size: 3.5rem;
+    }
+}
+.heading-secondary{
+    font-family: $ff-inter;
+    color: #243B53;
+    font-size: 4.2rem;
+    font-weight: 500;
+    @include respond(tab-land){
+        font-size: 4.0rem;
+    }
+    @include respond(tab-port){
+        font-size: 3.0rem;
+    }
+    @include respond(phone){
+        font-size: 2.6rem;
+    }
+}
+.heading-tertiary{
+    font-family: $ff-inter;
+    color: #102A43;
+    font-size: 2.2rem;
+    font-weight: normal;
+    @include respond(tab-land){
+        font-size: 2.2rem;
+    }
+    @include respond(tab-port){
+        font-size: 2.2rem;
+    }
+    @include respond(phone){
+        font-size: 2.0rem;
+    }
+}
+
+
+// body-text
+.text-paragraph-18{
+    font-family: $ff-inter;
+    color: #334E68;
+    line-height: 1.8;
+    font-size: 1.8rem;
+}
+.text-paragraph-16{
+    font-family: $ff-inter;
+    color: #334E68;
+    line-height: 1.8;
+    font-size: 1.6rem;
+}
+.text-paragraph-14{
+    font-family: $ff-inter;
+    color: #334E68;
+    line-height: 1.7;
+    font-size: 1.4rem;
+}
+
+// other-text
+.heading_span{
+    &_1{
+        font-weight: 400;
+        
+    }
+    &_2{
+        
+
+        font-weight: 300;
+    }
+    &_3{
+        
+
+        font-weight: 300;
+    }
+}

@@ -1,6 +1,7 @@
 <template>
   <div>
-    Ini Halaman Admin {{ this.$auth.user }}
+    <nuxt-link to="/">Kesini</nuxt-link>
+    {{ this.$auth.user }}
     <button @click="logoutUser">Logout</button>
   </div>
 </template>

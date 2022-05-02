@@ -1,0 +1,378 @@
+// --------------header--------------//
+.header {
+    position: relative;
+    margin-top: 30px;
+    width: 100%;
+
+    &-container {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 45px;
+
+        @include respond(tab-land) {
+            width: 90%;
+        }
+
+        @include respond(tab-port) {
+            width: 80%;
+            flex-direction: column;
+        }
+    }
+
+    &_content {
+        width: 100%;
+        align-self: flex-start;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    &_img {
+        width: 100%;
+
+        @include respond(tab-port) {
+            display: none;
+        }
+
+        & img {
+            width: 100%;
+
+        }
+    }
+}
+
+// -------------- Stats --------------//
+.stats {
+    position: relative;
+    width: 100%;
+
+    &-container {
+        width: 80%;
+        margin: 0 auto;
+        padding: 75px 0;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+
+        @include respond(tab-land) {
+            width: 90%;
+        }
+
+        @include respond(tab-land) {
+            grid-template-columns: repeat(2, 1fr);
+            width: 80%;
+        }
+
+        @include respond(phone) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    &_card {
+        justify-self: center;
+        position: relative;
+        width: 250px;
+        height: 150px;
+        background-color: #fff;
+        border-radius: 4px;
+        box-shadow: 0px 8px 24px rgba(160, 160, 160, 0.15);
+
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 100px;
+            height: 100px;
+            background: url("../img/square-box.svg") no-repeat center center/cover;
+        }
+
+        &_1,
+        &_3 {
+            &::before {
+                top: 0;
+                right: 25px;
+                transform: translate(35%, -50%) rotate(-62.72deg);
+            }
+        }
+
+        &_2,
+        &_4 {
+            &::before {
+                top: 150px;
+                right: 25px;
+                transform: translate(35%, -50%) rotate(-62.72deg);
+            }
+        }
+
+    }
+}
+
+// -------------- Showcase --------------//
+.showcase {
+    width: 100%;
+    padding: 90px 0;
+
+    @include respond(tab-port) {
+        padding: 45px 0;
+    }
+
+    &-container {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 60px;
+
+        @include respond(tab-land) {
+            width: 90%;
+        }
+
+        @include respond(tab-port) {
+            width: 80%;
+            flex-direction: column;
+        }
+    }
+
+    &_content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        text-align: left;
+
+        & h2 {
+            width: 80%;
+
+            @include respond(tab-port) {
+                width: 100%;
+            }
+        }
+
+        & p {
+            width: 80%;
+
+            @include respond(tab-port) {
+                width: 100%;
+            }
+        }
+    }
+
+    &_1 {
+        & .showcase_content {
+            order: 1;
+        }
+
+        & .showcase_img {
+            order: 2;
+            max-width: 400px;
+            width: 100%;
+        }
+    }
+
+    &_2 {
+        & .showcase_content {
+            justify-content: flex-end;
+            order: 2;
+
+            @include respond(tab-port) {
+                order: 1;
+            }
+        }
+
+        & .showcase_img {
+            order: 1;
+            max-width: 300px;
+            width: 100%;
+
+            @include respond(tab-port) {
+                order: 2;
+            }
+        }
+
+        & h2 {
+            margin-left: auto;
+
+            @include respond(tab-port) {
+                margin-left: 0;
+            }
+        }
+
+        & p {
+            margin-left: auto;
+
+            @include respond(tab-port) {
+                margin-left: 0;
+            }
+        }
+    }
+
+    &_3 {
+        & .showcase_content {
+            order: 1;
+        }
+
+        & .showcase_img {
+            order: 2;
+            max-width: 370px;
+            width: 100%;
+        }
+
+        & h2 {
+            width: 100%;
+        }
+    }
+
+}
+
+// -------------- Cards --------------//
+.cards {
+    width: 100%;
+    padding: 60px 0;
+
+    &-container {
+        width: 80%;
+        margin: 0 auto;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 45px;
+        flex-wrap: wrap;
+    }
+
+    & .card {
+        position: relative;
+        width: 300px;
+        padding-left: 40px;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 30px;
+        flex-direction: column;
+        background-color: #fff;
+        border-radius: 4px;
+        box-shadow: 0px 16px 48px rgba(160, 160, 160, 0.15);
+        overflow: hidden;
+        transition: all 0.15s ease-in;
+
+        // card_1 card_2 card_3 classes are used to positon the square
+        &::before {
+            position: absolute;
+            content: '';
+            width: 100px;
+            height: 100px;
+            transform: translateX(30%) rotate(102.2deg);
+            background: url("../img/square-light.svg") no-repeat center center/cover;
+        }
+
+        &_1 {
+            &::before {
+                bottom: 20px;
+                right: 0;
+
+            }
+        }
+
+        &_2 {
+            &::before {
+                top: 20px;
+                right: 0;
+                transform: translateX(30%) rotate(-70deg);
+            }
+        }
+
+        &_3 {
+            &::before {
+                bottom: 200px;
+                right: 0;
+                transform: translate(30%, 50%) rotate(-64.02deg);
+            }
+        }
+
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0px 16px 48px rgba(160, 160, 160, 0.15),
+                0px 16px 48px rgba(160, 160, 160, 0.15);
+
+        }
+
+        &_heading {
+            font-size: 2.2rem;
+            color: #486581;
+            font-weight: 500;
+        }
+
+        &_text {
+            color: #829AB1;
+            font-weight: normal;
+        }
+
+        &_text_link {
+            font-size: 1.6rem;
+            color: #8882FB;
+            font-weight: 600;
+            font-family: $ff-inter;
+            transition: all 0.2s ease-in;
+
+            &:hover {
+                transform: translateY(-2px);
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+// -------------- CTA --------------//
+.cta {
+    width: 100%;
+    padding: 60px 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-direction: column;
+    text-align: center;
+
+    @include respond(tab-port) {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    &_brand {
+        margin-top: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+        flex-wrap: wrap;
+
+        &_img {
+            transform: scale(0.75);
+        }
+    }
+
+    &_mb_br {
+
+        // hide <br> for mobile view
+        @include respond(phone) {
+            display: none;
+        }
+    }
+}

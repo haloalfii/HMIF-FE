@@ -1,0 +1,154 @@
+// This file contains styles only for pricing.html page
+.pricing {
+    padding: 30px 0;
+    width: 100%;
+    min-height: 80vh;
+    background-color: #F4F7FC;
+
+    &_heading {
+        padding: 30px 20px;
+        text-align: center;
+
+        & br {
+            @include respond(tab-port) {
+                display: none;
+            }
+        }
+    }
+
+    &-container {
+        width: 80%;
+        margin: 30px auto;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        flex-wrap: wrap;
+
+        @include respond(tab-land) {
+            width: 90%;
+        }
+    }
+
+    &_card {
+        position: relative;
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 45px;
+        width: 320px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+        box-shadow: 0px 16px 48px rgba(160, 160, 160, 0.15);
+        transition: all 0.15s ease-in;
+        overflow: hidden;
+
+        @include respond(phone) {
+            padding: 30px;
+        }
+
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0px 16px 48px rgba(160, 160, 160, 0.15),
+                0px 16px 48px rgba(160, 160, 160, 0.15);
+
+        }
+
+        // card_1 card_2 card_3 classes are used to positon the square
+        &::before {
+            position: absolute;
+            content: '';
+            width: 100px;
+            height: 100px;
+            transform: translateX(30%) rotate(102.2deg);
+            background: url("../img/square-light.svg") no-repeat center center/cover;
+        }
+
+        &_1 {
+            &::before {
+                top: 20px;
+                right: 0;
+                transform: translateX(30%) rotate(-70deg);
+            }
+        }
+
+        &_2 {
+            &::before {
+                bottom: 20px;
+                right: 0;
+
+            }
+        }
+
+        &_3 {
+            &::before {
+                bottom: 275px;
+                right: 0;
+                transform: translate(30%, 50%) rotate(-64.02deg);
+            }
+        }
+
+        &_info {
+            margin: 30px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+
+            & h3 {
+                font-weight: bold;
+                font-size: 2rem;
+            }
+
+            & p {
+                color: #243B53;
+                font-weight: 500;
+            }
+        }
+
+        & ul {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 10px;
+            flex-direction: column;
+
+            & li {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+
+                & img {
+                    transform: scale(0.8);
+                }
+            }
+        }
+
+        & .underline {
+            margin: 15px 0px;
+            margin-top: 30px;
+            width: 100%;
+            background: linear-gradient(270deg, rgba(238, 238, 238, 0.38) 0%, #EEEEEE 37.4%, rgba(238, 238, 238, 0.38) 100%);
+            opacity: 0.5;
+            height: 1px;
+        }
+
+        & .price-text {
+            margin: 15px auto;
+            font-weight: bold;
+            text-align: center;
+            align-content: center;
+            justify-self: center;
+            justify-items: center;
+        }
+
+        .btn-pricing {
+            margin: 0 auto;
+            padding: 10px 20px;
+        }
+    }
+}
