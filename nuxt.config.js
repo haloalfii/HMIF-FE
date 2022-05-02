@@ -40,12 +40,55 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     "@nuxtjs/axios",
+    "@nuxtjs/auth",
+    "@nuxtjs/dotenv",
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: "/",
+    baseURL: "/admin",
+    proxy: true,
+    proxyHeaders: false,
+  },
+
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: {
+            url: "/hmif_api/api/auth/login",
+            method: "post",
+            propertyName: "access_token",
+          },
+          logout: {
+            url: "/hmif_api/api/auth/logout",
+            method: "post",
+          },
+          user: {
+            url: "/hmif_api/api/auth/user-profile",
+            method: "get",
+            propertyName: false,
+          },
+        },
+      },
+    },
+    redirect: {
+      login: "/admin/login",
+      logout: "/admin/login",
+      home: "/admin",
+    },
+  },
+
+  router: {
+    middleware: ["auth"],
+  },
+
+  proxy: {
+    "/hmif_api/": {
+      target: process.env.API_URL,
+      pathRewrite: { "^/hmif_api/": "/" },
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

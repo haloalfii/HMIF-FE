@@ -14,7 +14,7 @@
     </div>
     <div class="col-lg-6">
       <div class="p-5">
-        <div class="d-flex justify-content-center mb-4">
+        <div class="d-flex justify-content-center mb-2">
           <img
             src="~/assets/img/logo.png"
             width="24px"
@@ -31,10 +31,11 @@
             <a href="https://github.com/haloalfii">@haloalfii </a>
           </p>
         </div>
-        <form class="user">
+        <form class="user" @submit.prevent="userLogin">
           <div class="form-group">
             <input
               type="email"
+              v-model="email"
               class="form-control form-control-user"
               id="exampleInputEmail"
               aria-describedby="emailHelp"
@@ -72,14 +73,16 @@
               >
             </div>
           </div>
-          <a href="index.html" class="btn btn-primary btn-user btn-block">
+          <button type="submit" class="btn btn-primary btn-user btn-block">
             Login
-          </a>
+          </button>
         </form>
         <hr />
         <div class="text-center text-dark">
           Doesn't have an account?
-          <nuxt-link class="" to="/register">Create an Account!</nuxt-link>
+          <nuxt-link class="" to="/admin/register"
+            >Create an Account!</nuxt-link
+          >
         </div>
       </div>
     </div>
@@ -107,20 +110,26 @@ export default {
     };
   },
 
+  mounted() {
+    if (this.$auth.loggedIn) {
+      this.$router.push("/");
+    }
+  },
+
   methods: {
-    // async userLogin() {
-    //   const data = new FormData();
-    //   data.append("email", this.email);
-    //   data.append("password", this.password);
-    //   const res = await this.$auth.loginWith("local", {
-    //     data: data,
-    //   });
-    //   if (res.status === 200) {
-    //     localStorage.setItem("token", res.access_token);
-    //     console.log(this.$auth.user);
-    //     this.$router.push("/");
-    //   }
-    // },
+    async userLogin() {
+      const data = new FormData();
+      data.append("email", this.email);
+      data.append("password", this.password);
+      const res = await this.$auth.loginWith("local", {
+        data: data,
+      });
+      if (res.status === 200) {
+        localStorage.setItem("token", res.access_token);
+        console.log(this.$auth.user);
+        this.$router.push("/admin");
+      }
+    },
     seePassword() {
       this.displayPassword.status = 1;
       this.displayPassword.type = "text";

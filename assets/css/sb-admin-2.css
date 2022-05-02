@@ -10977,11 +10977,11 @@ a:focus {
     width: 14rem;
   }
   .sidebar .nav-item .nav-link i {
-    font-size: 0.85rem;
+    font-size: 16px;
     margin-right: 0.25rem;
   }
   .sidebar .nav-item .nav-link span {
-    font-size: 0.85rem;
+    font-size: 16px;
     display: inline;
   }
   .sidebar .nav-item .nav-link[data-toggle="collapse"]::after {
@@ -11360,7 +11360,7 @@ form.user .form-control-user-select {
 }
 
 form.user .btn-user {
-  font-size: 0.8rem;
+  font-size: 16px;
   border-radius: 0.35rem;
   padding: 0.75rem 1rem;
 }
@@ -11752,7 +11752,7 @@ footer.sticky-footer {
 
 footer.sticky-footer .copyright {
   line-height: 1;
-  font-size: 0.8rem;
+  font-size: 16px;
 }
 
 body.sidebar-toggled footer.sticky-footer {

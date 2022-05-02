@@ -14,7 +14,7 @@
     </div>
     <div class="col-lg-6">
       <div class="p-5">
-        <div class="d-flex justify-content-center mb-4">
+        <div class="d-flex justify-content-center mb-2">
           <img
             src="~/assets/img/logo.png"
             width="24px"
@@ -31,9 +31,10 @@
             <a href="https://github.com/haloalfii">@haloalfii </a>
           </p>
         </div>
-        <form class="user">
+        <form class="user" @submit.prevent="registerAccount">
           <div class="form-group">
             <input
+              v-model="register.name"
               type="text"
               class="form-control form-control-user"
               id="name"
@@ -45,7 +46,8 @@
           <div class="form-group row">
             <div class="col-sm-6">
               <select
-                id="role"
+                v-model="register.gender"
+                id="gender"
                 class="form-select form-control form-control-user-select"
                 aria-label="Default select example"
               >
@@ -56,6 +58,7 @@
             </div>
             <div class="col-sm-6">
               <select
+                v-model="register.department"
                 id="role"
                 class="form-select form-control form-control-user-select"
                 aria-label="Default select example"
@@ -69,6 +72,7 @@
 
           <div class="form-group">
             <input
+              v-model="register.email"
               type="email"
               class="form-control form-control-user"
               id="email"
@@ -119,6 +123,7 @@
           <div class="form-group row">
             <div class="col-sm-6">
               <input
+                v-model="register.address"
                 type="text"
                 id="address"
                 class="form-control form-control-user"
@@ -127,6 +132,7 @@
             </div>
             <div class="col-sm-6">
               <input
+                v-model="register.contact"
                 type="number"
                 id="contact"
                 class="form-control form-control-user"
@@ -136,6 +142,7 @@
           </div>
           <div class="form-group">
             <input
+              v-model="register.year"
               type="number"
               class="form-control form-control-user"
               min="1900"
@@ -145,25 +152,21 @@
             />
           </div>
           <div class="form-group">
-            <div class="custom-control custom-checkbox small">
-              <input
-                type="checkbox"
-                class="custom-control-input"
-                id="customCheck"
-              />
-              <label class="custom-control-label" for="customCheck"
-                >Remember Me</label
-              >
-            </div>
+            <input
+              ref="file"
+              @change="handleFileObject"
+              type="file"
+              class="form-control form-control-user"
+            />
           </div>
-          <a href="index.html" class="btn btn-primary btn-user btn-block">
+          <button type="submit" class="btn btn-primary btn-user btn-block">
             Register
-          </a>
+          </button>
         </form>
         <hr />
         <div class="text-center text-dark">
           Already have an account?
-          <nuxt-link class="" to="/login">Login!</nuxt-link>
+          <nuxt-link class="" to="/admin/login">Login!</nuxt-link>
         </div>
       </div>
     </div>
@@ -193,19 +196,24 @@ export default {
       uploadedPictureName: null,
       register: {
         name: "",
+        gender: "",
+        department: "",
         email: "",
         password: "",
         password_confirmation: "",
-        role: "",
+        address: "",
+        contact: "",
+        year: "",
+        status: "active",
         picture: null,
       },
     };
   },
-  // mounted() {
-  //   if (this.$auth.loggedIn) {
-  //     this.$router.push("/");
-  //   }
-  // },
+  mounted() {
+    if (this.$auth.loggedIn) {
+      this.$router.push("/admin");
+    }
+  },
   methods: {
     seePassword() {
       this.displayPassword.status = 1;
@@ -229,16 +237,21 @@ export default {
       data.append("email", this.register.email);
       data.append("password", this.register.password);
       data.append("password_confirmation", this.register.password_confirmation);
-      data.append("role", this.register.role);
+      data.append("gender", this.register.gender);
+      data.append("department", this.register.department);
+      data.append("address", this.register.address);
+      data.append("contact", this.register.contact);
+      data.append("year", this.register.year);
+      data.append("status", this.register.status);
       data.append("picture", this.uploadedPicture);
       this.$axios
-        .post("http://127.0.0.1:8000/api/auth/register", data, {
+        .post("/hmif_api/api/auth/register", data, {
           "Content-Type":
             "multipart/form-data; charset=utf-8; boundary=" +
             Math.random().toString().substr(2),
         })
         .then((res) => {
-          this.$router.push("/login");
+          this.$router.push("/admin/login");
           console.log(res);
         });
     },
