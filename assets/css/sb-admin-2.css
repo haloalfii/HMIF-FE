@@ -10216,6 +10216,7 @@ a.text-dark:focus {
 html {
   position: relative;
   min-height: 100%;
+  scroll-behavior: smooth !important;
 }
 
 body {

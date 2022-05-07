@@ -130,10 +130,10 @@
       </div>
       <!-- .cards-container end -->
       <div style="display: flex; justify-content: center; margin-top: 3rem">
-        <button class="btn btn-hmif">Read More</button>
+        <nuxt-link to="/article" class="btn btn-hmif">Read More</nuxt-link>
       </div>
     </main>
-    <main class="cta">
+    <main id="partner" class="cta">
       <h2 class="heading-secondary">Backed by the best</h2>
       <p class="text-paragraph-16">
         Our university gives a lot of support to this organization

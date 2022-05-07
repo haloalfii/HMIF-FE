@@ -157,7 +157,7 @@ body {
   font-family: "Inter", sans-serif;
   color: #334e68;
   line-height: 1.8;
-  font-size: 1.6rem;
+  font-size: 16px;
 }
 
 .text-paragraph-14 {
@@ -1322,7 +1322,7 @@ nav .logo-text {
 }
 
 .blog_card_heading {
-  font-size: 2.2rem;
+  font-size: 22px;
   color: #486581;
   font-weight: 500;
 }
@@ -1333,8 +1333,8 @@ nav .logo-text {
 }
 
 .blog_card_text_link {
-  font-size: 1.6rem;
-  color: #8882fb;
+  font-size: 16px;
+  color: #da2921;
   font-weight: 600;
   font-family: "Inter", sans-serif;
   -webkit-transition: all 0.2s ease-in;
