@@ -72,7 +72,11 @@
           </span>
         </div>
         <!-- .showcase_content end -->
-        <img src="~/assets/img/logo.png" alt="" class="showcase_img" />
+        <img
+          src="~/assets/img/logo.png"
+          alt=""
+          class="showcase_img header_img"
+        />
       </div>
       <!-- .showcase-container end -->
     </main>

@@ -550,6 +550,10 @@ nav .logo-text {
   .header_img {
     display: none;
   }
+
+  .xx {
+    display: none;
+  }
 }
 
 .header_img img {
